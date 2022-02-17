@@ -1,0 +1,70 @@
+! Title: Adblocker 
+! ———
+! ——— general rules
+*$ping,important
+*$csp=worker-src 'none',1p,domain=~googleusercontent.com|~mega.nz|~github.com|~gitlab.com|~github.io|~twitch.tv|~animax.to|~regex101.com|~pornhub.org|~speed.cloudflare.com|~mega.io
+*$websocket,domain=~slack.com|~github.com|~speedtest.net|~redirect-ads.com|~facebook.com|~web.whatsapp.com
+||cdn.ampproject.org/v0.js$script,redirect=ampproject_v0.js
+||xn--$doc,frame
+! ——— url
+||ret.tc^
+||fossnettr.com^
+||gstaticadssl.l.google.com^
+||firebase.googleapis.com^
+||195.175.254.2^$all
+||254.0.0.2^$all
+! ——— anti adblock
+altyazikeyfi.shop##+js(nobab)
+altyazi.live##+js(nobab)
+whatsaero.com##+js(abort-on-property-read, adBlockDetected)
+bcvc.live##+js(adfly-defuser)
+! ——— cookies
+mhrs.gov.tr##.cerez
+! ——— css
+gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
+! ——— general extensions
+! ——— general url
+||cdn.e-devlet.gov.tr/themes/ankara/js/analitik.min.9.js$domain=turkiye.gov.tr,important
+||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
+||goat.blahdns.com^$domain=blahdns.com
+*$script,redirect-rule=noopjs,domain=tr.sputniknews.com|cdnntr1.img.sputniknews.com
+||startpage.com/sp/adsense/
+! ——— removeparam
+||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+||startpage.com^$removeparam=sc
+||add.startpage.com^$removeparam=source
+||addons.mozilla.org^$removeparam=/^utm(_[a-z_]*)?=/
+||element.io^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+! ——— search
+duckduckgo.com##[data-domain$="ahaber.com.tr"]
+duckduckgo.com##[data-domain$="yenisafak.com"]
+duckduckgo.com##[data-domain$="fossnettr.com"]
+duckduckgo.com##[data-domain$="instagram.com"]
+duckduckgo.com##[data-domain$="twitter.com"]
+duckduckgo.com##[data-domain$="t.me"]
+duckduckgo.com##[data-domain$="translate.google.com"]
+duckduckgo.com##[data-domain$="haberler.com"]
+duckduckgo.com##[data-domain$="sabah.com.tr"]
+duckduckgo.com##[data-domain$="haberglobal.com.tr"]
+duckduckgo.com##[data-domain$="tumblr.com"]
+duckduckgo.com##[data-domain$="facebook.com"]
+duckduckgo.com##[data-domain$="hurriyet.com.tr"] 
+duckduckgo.com##[data-domain$="news.google.com"]
+duckduckgo.com##[data-domain$="apps.apple.com"]
+duckduckgo.com##[data-domain$="play.google.com"]
+duckduckgo.com##[data-domain$="pinterest.com"]
+duckduckgo.com##[data-domain$="pinterest.it"]
+duckduckgo.com##[data-domain$="pinterest.de"]
+duckduckgo.com##[data-domain$="pinterest.ru"]
+duckduckgo.com##[data-domain$="haber7.com"]
+duckduckgo.com##[data-domain$="ensonhaber.com"]
+! ——— url shortener
+pollos.cyou##+js(nano-sib, , ,0.02)
+whatsaero.com##+js(nano-sib, , ,0.02)
+aeromods.app##+js(nano-sib, , ,0.02)
+bcvc.live##+js(nano-sib, , ,0.02)
+altyazi.live##+js(nano-stb)
+diasfem.com##+js(nano-stb)
+altyazikeyfi.shop##+js(nano-stb)
+lajkema.com##+js(nano-stb)
+
