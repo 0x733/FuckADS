@@ -24,10 +24,10 @@ mhrs.gov.tr##.cerez
 gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
 ! ——— general extensions
 ! ——— general url
-||cdn.e-devlet.gov.tr/themes/ankara/js/analitik.min.9.js$domain=turkiye.gov.tr,important
+||cdn.e-devlet.gov.tr/*/*/*/analitik.*.*.js$script,redirect-rule=noop.js,domain=www.turkiye.gov.tr
 ||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
 ||goat.blahdns.com^$domain=blahdns.com
-||sputniknews.com/$script,redirect=noop.js,domain=tr.sputniknews.com
+*$script,redirect-rule=noop.js,domain=sputniknews.com
 ||startpage.com/sp/adsense/
 ! ——— removeparam
 ||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
