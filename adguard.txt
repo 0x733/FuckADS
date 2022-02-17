@@ -1,0 +1,63 @@
+! Title: Adblocker
+! ———
+! ——— url
+||ret.tc^
+||fossnettr.com^
+||gstaticadssl.l.google.com^
+||firebase.googleapis.com^
+||195.175.254.2^$all
+||254.0.0.2^$all
+! ——— anti adblock
+altyazikeyfi.shop#%#//scriptlet('prevent-bab')
+altyazi.live#%#//scriptlet('prevent-bab')
+whatsaero.com#%#//scriptlet("abort-on-property-read", "adBlockDetected")
+bcvc.live#%#//scriptlet('prevent-adfly')
+! ——— cookies
+mhrs.gov.tr##.cerez
+! ——— css
+gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
+! ——— general extensions
+! ——— general url
+||cdn.e-devlet.gov.tr/themes/ankara/js/analitik.min.9.js$domain=turkiye.gov.tr,important
+||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
+||goat.blahdns.com^$domain=blahdns.com
+||sputniknews.com^$script,redirect=noopjs
+||startpage.com/sp/adsense/
+! ——— removeparam
+||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+||startpage.com^$removeparam=sc
+||add.startpage.com^$removeparam=source
+||addons.mozilla.org^$removeparam=/^utm(_[a-z_]*)?=/
+||element.io^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+! ——— search
+duckduckgo.com##[data-domain$="ahaber.com.tr"]
+duckduckgo.com##[data-domain$="yenisafak.com"]
+duckduckgo.com##[data-domain$="fossnettr.com"]
+duckduckgo.com##[data-domain$="instagram.com"]
+duckduckgo.com##[data-domain$="twitter.com"]
+duckduckgo.com##[data-domain$="t.me"]
+duckduckgo.com##[data-domain$="translate.google.com"]
+duckduckgo.com##[data-domain$="haberler.com"]
+duckduckgo.com##[data-domain$="sabah.com.tr"]
+duckduckgo.com##[data-domain$="haberglobal.com.tr"]
+duckduckgo.com##[data-domain$="tumblr.com"]
+duckduckgo.com##[data-domain$="facebook.com"]
+duckduckgo.com##[data-domain$="hurriyet.com.tr"] 
+duckduckgo.com##[data-domain$="news.google.com"]
+duckduckgo.com##[data-domain$="apps.apple.com"]
+duckduckgo.com##[data-domain$="play.google.com"]
+duckduckgo.com##[data-domain$="pinterest.com"]
+duckduckgo.com##[data-domain$="pinterest.it"]
+duckduckgo.com##[data-domain$="pinterest.de"]
+duckduckgo.com##[data-domain$="pinterest.ru"]
+duckduckgo.com##[data-domain$="haber7.com"]
+duckduckgo.com##[data-domain$="ensonhaber.com"]
+! ——— url shortener
+pollos.cyou#%#//scriptlet('adjust-setInterval', '', '*', '0.02')
+whatsaero.com#%#//scriptlet('adjust-setInterval', '', '*', '0.02')
+aeromods.app#%#//scriptlet('adjust-setInterval', '', '*', '0.02')
+bcvc.live#%#//scriptlet('adjust-setInterval', '', '*', '0.02') 
+altyazi.live#%#//scriptlet('adjust-setTimeout')
+diasfem.com#%#//scriptlet('adjust-setTimeout')
+altyazikeyfi.shop#%#//scriptlet('adjust-setTimeout')
+lajkema.com#%#//scriptlet('adjust-setTimeout')
