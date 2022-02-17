@@ -27,7 +27,7 @@ gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 1
 ||cdn.e-devlet.gov.tr/themes/ankara/js/analitik.min.9.js$domain=turkiye.gov.tr,important
 ||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
 ||goat.blahdns.com^$domain=blahdns.com
-*$script,redirect-rule=noopjs,domain=tr.sputniknews.com|cdnntr1.img.sputniknews.com
+*$script,redirect-rule=noopjs,domain=sputniknews.com
 ||startpage.com/sp/adsense/
 ! ——— removeparam
 ||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
