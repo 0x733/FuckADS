@@ -1,4 +1,4 @@
-! Title: Adblocker 
+! Title: uBO
 ! ———
 ! ——— general rules
 *$ping,important
