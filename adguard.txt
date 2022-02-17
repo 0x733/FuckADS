@@ -22,6 +22,7 @@ gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 1
 ||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
 ||goat.blahdns.com^$domain=blahdns.com
 ||sputniknews.com^$script,redirect=noopjs
+||cm.sputniknews.com^$websocket
 ||startpage.com/sp/adsense/
 ! ——— removeparam
 ||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
