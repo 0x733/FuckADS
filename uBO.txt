@@ -18,6 +18,7 @@
 ||firebase.googleapis.com^
 ||195.175.254.2^$all
 ||254.0.0.2^$all
+||api.github.com/_private/browser/errors
 ! ——— anti adblock
 altyazikeyfi.shop##+js(nobab)
 altyazi.live##+js(nobab)
