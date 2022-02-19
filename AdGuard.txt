@@ -18,12 +18,18 @@ mhrs.gov.tr##.cerez
 gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
 ! ——— general extensions
 ! ——— general url
-||cdn.e-devlet.gov.tr/themes/ankara/js/analitik.min.9.js$domain=turkiye.gov.tr,important
+||cm.sputniknews.com^$xhr
+||a.sputniknews.com/js/*$script
+||cdnn1.img.sputniknews.com/min/js/firebase/*$script
+||sputniknews.com/project_data/*$script
+||cdnn1.img.sputniknews.com/min/js/dist/firebase.js$script
+||cdn.e-devlet.gov.tr/*/*/*/analitik.*.*.js$script,redirect-rule=noop.js,domain=www.turkiye.gov.tr
 ||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
 ||goat.blahdns.com^$domain=blahdns.com
-||sputniknews.com^$script,redirect=noopjs
-||cm.sputniknews.com^$websocket
 ||startpage.com/sp/adsense/
+||googleusercontent.com/proxy$domain=mail.google.com
+/annotations_module.js$script,important,domain=youtube.com
+/endscreen.js$script,important,domain=youtube.com
 ! ——— removeparam
 ||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
 ||startpage.com^$removeparam=sc

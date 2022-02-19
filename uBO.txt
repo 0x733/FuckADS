@@ -5,6 +5,11 @@
 *$csp=worker-src 'none',1p,domain=~googleusercontent.com|~mega.nz|~github.com|~gitlab.com|~github.io|~twitch.tv|~animax.to|~regex101.com|~pornhub.org|~speed.cloudflare.com|~mega.io
 *$websocket,domain=~slack.com|~github.com|~speedtest.net|~redirect-ads.com|~facebook.com|~web.whatsapp.com
 ||cdn.ampproject.org/v0.js$script,redirect=ampproject_v0.js
+*/cleardot.gif$image,redirect=1x1.gif
+*/cleardot.gif$xmlhttprequest,redirect=1x1.gif
+!#if env_mobile
+*$csp=manifest-src 'none'
+!#endif
 ||xn--$doc,frame
 ! ——— url
 ||ret.tc^
@@ -24,17 +29,22 @@ mhrs.gov.tr##.cerez
 gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
 ! ——— general extensions
 ! ——— general url
+||cm.sputniknews.com^$xhr
+||a.sputniknews.com/js/*$script
+||cdnn1.img.sputniknews.com/min/js/firebase/*$script
+||sputniknews.com/project_data/*$script
+||cdnn1.img.sputniknews.com/min/js/dist/firebase.js$script
 ||cdn.e-devlet.gov.tr/*/*/*/analitik.*.*.js$script,redirect-rule=noop.js,domain=www.turkiye.gov.tr
 ||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
 ||goat.blahdns.com^$domain=blahdns.com
-*$script,redirect-rule=noop.js,domain=sputniknews.com
 ||startpage.com/sp/adsense/
+||googleusercontent.com/proxy$domain=mail.google.com
+/annotations_module.js$script,important,domain=youtube.com
+/endscreen.js$script,important,domain=youtube.com
 ! ——— removeparam
-||spotify.com^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
-||startpage.com^$removeparam=sc
-||add.startpage.com^$removeparam=source
-||addons.mozilla.org^$removeparam=/^utm(_[a-z_]*)?=/
-||element.io^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+*$removeparam=/^utm(_[a-z_]*)?=/
+*$removeparam=sc
+*$removeparam=source
 ! ——— search
 duckduckgo.com##[data-domain$="ahaber.com.tr"]
 duckduckgo.com##[data-domain$="yenisafak.com"]
