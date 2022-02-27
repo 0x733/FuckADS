@@ -46,6 +46,7 @@ gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 1
 *$removeparam=/^utm(_[a-z_]*)?=/
 *$removeparam=sc
 *$removeparam=source
+@@*$removeparam,domain=googlevideo.com
 ! ——— search
 duckduckgo.com##[data-domain$="ahaber.com.tr"]
 duckduckgo.com##[data-domain$="yenisafak.com"]
