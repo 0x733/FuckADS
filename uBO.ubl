@@ -40,6 +40,7 @@ gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 1
 ||goat.blahdns.com^$domain=blahdns.com
 ||startpage.com/sp/adsense/
 ||googleusercontent.com/proxy$domain=mail.google.com
+||platform.twitter.com/widgets.js$script,redirect=noopjs
 /annotations_module.js$script,important,domain=youtube.com
 /endscreen.js$script,important,domain=youtube.com
 ! ——— removeparam
