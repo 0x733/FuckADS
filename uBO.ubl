@@ -28,6 +28,7 @@ bcvc.live##+js(adfly-defuser)
 mhrs.gov.tr##.cerez
 ! ——— css
 gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
+jetfilmizle.xyz##.footer
 ! ——— general extensions
 ! ——— general url
 ||cm.sputniknews.com^$xhr
