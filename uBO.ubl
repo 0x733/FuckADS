@@ -50,6 +50,10 @@ jetfilmizle.xyz##.footer
 ||add.startpage.com^$removeparam=source
 ||addons.mozilla.org^$removeparam=/^utm(_[a-z_]*)?=/
 ||element.io^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+*$removeparam=utm_source
+*$removeparam=utm_medium
+*$removeparam=utm_campaign
+*$removeparam=utm_content
 ! ——— search
 duckduckgo.com##[data-domain$="ahaber.com.tr"]
 duckduckgo.com##[data-domain$="yenisafak.com"]
