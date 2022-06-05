@@ -29,6 +29,8 @@ mhrs.gov.tr##.cerez
 ! ——— css
 gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
 jetfilmizle.xyz##.footer
+xiaomifirmwareupdater.com##.card-body.card
+xiaomifirmwareupdater.com###footer
 ! ——— general extensions
 ! ——— general url
 ||cm.sputniknews.com^$xhr
@@ -50,6 +52,7 @@ jetfilmizle.xyz##.footer
 ||add.startpage.com^$removeparam=source
 ||addons.mozilla.org^$removeparam=/^utm(_[a-z_]*)?=/
 ||element.io^$~xhr,removeparam=/^utm(_[a-z_]*)?=/
+||anonaddy.com^$removeparam=ref
 *$removeparam=utm_source
 *$removeparam=utm_medium
 *$removeparam=utm_campaign
