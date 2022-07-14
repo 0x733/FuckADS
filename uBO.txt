@@ -20,7 +20,7 @@
 ||254.0.0.2^$all
 ||api.github.com/_private/browser/errors
 ! ——— anti adblock
-altyazikeyfi.shop##+js(nobab)
+altyazikeyfim.shop##+js(nobab)
 altyazi.live##+js(nobab)
 whatsaero.com##+js(abort-on-property-read, adBlockDetected)
 bcvc.live##+js(adfly-defuser)
@@ -70,7 +70,7 @@ duckduckgo.com##[data-domain$="sabah.com.tr"]
 duckduckgo.com##[data-domain$="haberglobal.com.tr"]
 duckduckgo.com##[data-domain$="tumblr.com"]
 duckduckgo.com##[data-domain$="facebook.com"]
-duckduckgo.com##[data-domain$="hurriyet.com.tr"] 
+duckduckgo.com##[data-domain$="hurriyet.com.tr"]
 duckduckgo.com##[data-domain$="news.google.com"]
 duckduckgo.com##[data-domain$="apps.apple.com"]
 duckduckgo.com##[data-domain$="play.google.com"]
