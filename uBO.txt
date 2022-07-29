@@ -14,7 +14,6 @@
 ! ——— url
 ||ret.tc^
 ||fossnettr.com^
-||gstaticadssl.l.google.com^
 ||firebase.googleapis.com^
 ||195.175.254.2^$all
 ||254.0.0.2^$all
@@ -28,7 +27,7 @@ bcvc.live##+js(adfly-defuser)
 mhrs.gov.tr##.cerez
 ! ——— css
 gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 100% !important }
-jetfilmizle.xyz##.footer
+jetfilmizle.*##.footer
 xiaomifirmwareupdater.com##.card-body.card
 xiaomifirmwareupdater.com###footer
 ! ——— general extensions
