@@ -1007,8 +1007,7 @@ youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-s
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
 ! ——— url shortener
 pollos.cyou##+js(nano-sib, , ,0.02)
-whatsaero.com##+js(nano-sib, , ,0.02)
-aeromods.app##+js(nano-sib, , ,0.02)
+whatsaero.com,aeromods.app##+js(nano-setInterval-booster, count, , 0.02)
 bcvc.live##+js(nano-sib, , ,0.02)
 altyazi.live##+js(nano-stb)
 diasfem.com##+js(nano-stb)
