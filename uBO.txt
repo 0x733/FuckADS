@@ -7,6 +7,7 @@
 ||cdn.ampproject.org/v0.js$script,redirect=ampproject_v0.js
 */cleardot.gif$image,redirect=1x1.gif
 */cleardot.gif$xmlhttprequest,redirect=1x1.gif
+*3p,~image,~ping,~media,~frame,domain=google.com
 !#if env_mobile
 *$csp=manifest-src 'none'
 !#endif
