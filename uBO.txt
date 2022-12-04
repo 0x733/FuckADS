@@ -1,3 +1,4 @@
+[uBlock Origin]
 ! Title: uBO
 ! ———
 ! ——— general rules
