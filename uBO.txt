@@ -31,6 +31,7 @@ gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 1
 jetfilmizle.*##.footer
 xiaomifirmwareupdater.com##.card-body.card
 xiaomifirmwareupdater.com###footer
+bundle.app##.myFeedbackArea.feedback
 ! ——— general extensions
 ! ——— general url
 ||cm.sputniknews.com^$xhr
