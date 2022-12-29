@@ -45,6 +45,7 @@ bundle.app##.myFeedbackArea.feedback
 ||startpage.com/sp/adsense/
 ||googleusercontent.com/proxy$domain=mail.google.com
 ||platform.twitter.com/widgets.js$script,redirect=noopjs
+||cloudflare.com/__log^
 /annotations_module.js$script,important,domain=youtube.com
 /endscreen.js$script,important,domain=youtube.com
 ! ——— removeparam
