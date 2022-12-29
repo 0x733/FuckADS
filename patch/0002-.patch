@@ -1,24 +1,24 @@
-From 04c5398a9fc339bc3530692d611206dd7626f8b9 Mon Sep 17 00:00:00 2001
+From 836f693743d62acc62fb0efeb300a5dcad1439d3 Mon Sep 17 00:00:00 2001
 From: Root <root@localhost.localdomain>
-Date: Thu, 29 Dec 2022 17:29:23 +0300
+Date: Thu, 29 Dec 2022 17:43:13 +0300
 Subject: [PATCH 2/2] :)
 
 ---
- uBO.txt | 1 -
- 1 file changed, 1 deletion(-)
+ uBO.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
 diff --git a/uBO.txt b/uBO.txt
-index 8c03ab1..590b078 100644
+index 590b078..a724956 100644
 --- a/uBO.txt
 +++ b/uBO.txt
-@@ -8,7 +8,6 @@
- ||cdn.ampproject.org/v0.js$script,redirect=ampproject_v0.js
- */cleardot.gif$image,redirect=1x1.gif
- */cleardot.gif$xmlhttprequest,redirect=1x1.gif
--*$3p,~image,~ping,~media,~frame,domain=google.com
- !#if env_mobile
- *$csp=manifest-src 'none'
- !#endif
+@@ -31,6 +31,7 @@ gitlab.com#$#.container-fluid.container-limited:not(.breadcrumbs) { max-width: 1
+ jetfilmizle.*##.footer
+ xiaomifirmwareupdater.com##.card-body.card
+ xiaomifirmwareupdater.com###footer
++bundle.app##.myFeedbackArea.feedback
+ ! ——— general extensions
+ ! ——— general url
+ ||cm.sputniknews.com^$xhr
 -- 
 2.39.0
 
