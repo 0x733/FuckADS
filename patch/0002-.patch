@@ -1,0 +1,38 @@
+From 11a5664903a365433afe106d4bf1f6790c5f5abd Mon Sep 17 00:00:00 2001
+From: Root <root@localhost.localdomain>
+Date: Fri, 30 Dec 2022 13:14:36 +0300
+Subject: [PATCH 2/2] :)
+
+---
+ uBO.txt | 7 +++++++
+ 1 file changed, 7 insertions(+)
+
+diff --git a/uBO.txt b/uBO.txt
+index 7b7a0a7..6dd791b 100644
+--- a/uBO.txt
++++ b/uBO.txt
+@@ -19,6 +19,7 @@
+ ||195.175.254.2^$all
+ ||254.0.0.2^$all
+ ||api.github.com/_private/browser/errors
++||buymeacoffee.com^$important
+ ! ——— anti adblock
+ altyazikeyfim.shop##+js(nobab)
+ altyazi.live##+js(nobab)
+@@ -32,7 +33,13 @@ jetfilmizle.*##.footer
+ xiaomifirmwareupdater.com##.card-body.card
+ xiaomifirmwareupdater.com###footer
+ bundle.app##.myFeedbackArea.feedback
++speed.cloudflare.com##.mapboxgl-map:upward(1):remove()
++dnsleaktest.com##p[style="padding-bottom: 100px"]:remove()
++developer.mozilla.org##.mdn-cta-container, [class^="notification"]:remove()
++github.com##.survey-container, .js-notice-dismiss, .mb-4.bg-white, .code-navigation-banner, .js-notice:remove()
++speedtest.net##.high-placeholder.pure-u-1, .u-c.pure-u-custom-ad-rectangle, .u-c.pure-u-custom-ad-skyscraper, .top-placeholder.pure-u-1, .eot-dd-content, .u-c.pure-u-1-4:nth-of-type(1) > ul.menu-footer:nth-of-type(2), .lowerboard-content:remove()
+ ! ——— general extensions
++1337x.to##+js(acis, document.getElementById, anoydl)
+ ! ——— general url
+ ||cm.sputniknews.com^$xhr
+ ||a.sputniknews.com/js/*$script
+-- 
+2.39.0
+
