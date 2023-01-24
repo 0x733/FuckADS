@@ -22,8 +22,6 @@
 ||api.github.com/_private/browser/errors
 ||buymeacoffee.com^$important
 ! ——— anti adblock
-altyazikeyfim.shop##+js(nobab)
-altyazi.live##+js(nobab)
 whatsaero.com##+js(abort-on-property-read, adBlockDetected)
 bcvc.live##+js(adfly-defuser)
 ! ——— cookies
@@ -42,12 +40,6 @@ speedtest.net##.high-placeholder.pure-u-1, .u-c.pure-u-custom-ad-rectangle, .u-c
 ! ——— general extensions
 1337x.to##+js(acis, document.getElementById, anoydl)
 ! ——— general url
-||cm.sputniknews.com^$xhr
-||a.sputniknews.com/js/*$script
-||cdnn1.img.sputniknews.com/min/js/firebase/*$script
-||sputniknews.com/project_data/*$script
-||cdnn1.img.sputniknews.com/min/js/dist/firebase.js$script
-||cdn.e-devlet.gov.tr/*/*/*/analitik.*.*.js$script,redirect-rule=noop.js,domain=www.turkiye.gov.tr
 ||browserleaks.com/proxy$document,csp=script-src 'unsafe-inline'
 ||goat.blahdns.com^$domain=blahdns.com
 ||startpage.com/sp/adsense/
@@ -1017,12 +1009,9 @@ youtube.com##ytd-browse ytd-rich-item-renderer:has(span.ytd-thumbnail-overlay-ti
 youtube.com##ytd-search ytd-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
 youtube.com##ytd-watch-next-secondary-results-renderer ytd-compact-video-renderer:has(span.ytd-thumbnail-overlay-time-status-renderer:has-text(/\s(0:\d\d|1:0\d)\s/))
 ! ——— url shortener
-pollos.cyou##+js(nano-sib, , ,0.02)
 whatsaero.com,aeromods.app##+js(nano-setInterval-booster, count, , 0.02)
 bcvc.live##+js(nano-sib, , ,0.02)
-altyazi.live##+js(nano-stb)
 diasfem.com##+js(nano-stb)
-altyazikeyfi.shop##+js(nano-stb)
 lajkema.com##+js(nano-stb)
 
 

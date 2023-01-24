@@ -21,8 +21,6 @@ wss://*.$websocket,domain=~slack.com|~github.com|~speedtest.net|~redirect-ads.co
 ||buymeacoffee.com^$all
 ||analitik.edevlet.gov.tr^$all
 ! ——— anti adblock
-altyazikeyfim.shop#%#//scriptlet('prevent-bab')
-altyazi.live#%#//scriptlet('prevent-bab')
 whatsaero.com#%#//scriptlet('ubo-abort-on-property-read.js', 'adBlockDetected')
 bcvc.live#%#//scriptlet('prevent-adfly')
 ! ——— cookies
@@ -63,11 +61,8 @@ platform.twitter.com/widgets.js$script,redirect=noopjs
 ! ——— search
 
 ! ——— url shortener
-pollos.cyou#%#//scriptlet('ubo-nano-sib.js', '', '', '0.02')
 whatsaero.com,aeromods.app#%#//scriptlet('ubo-nano-setInterval-booster.js', 'count', '', '0.02')
 bcvc.live#%#//scriptlet('ubo-nano-sib.js', '', '', '0.02')
-altyazi.live#%#//scriptlet('ubo-nano-stb.js')
 diasfem.com#%#//scriptlet('ubo-nano-stb.js')
-altyazikeyfi.shop#%#//scriptlet('ubo-nano-stb.js')
 lajkema.com#%#//scriptlet('ubo-nano-stb.js')
 
