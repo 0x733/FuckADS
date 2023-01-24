@@ -3,8 +3,8 @@
 ! ———
 ! ——— general rules
 *$ping,important
-*$csp=worker-src 'none',1p,domain=~googleusercontent.com|~mega.nz|~github.com|~gitlab.com|~github.io|~twitch.tv|~animax.to|~regex101.com|~pornhub.org|~speed.cloudflare.com|~mega.io
-wss://*.$websocket,domain=~slack.com|~github.com|~speedtest.net|~redirect-ads.com|~facebook.com|~web.whatsapp.com
+*$csp=worker-src 'none',1p,domain=~mega.nz|~github.com|~speed.cloudflare.com|~mega.io|~open.spotify.com
+wss://*.*$websocket,domain=~github.com|~speedtest.net|~open.spotify.com
 */cleardot.gif$image,redirect=1x1.gif
 */cleardot.gif$xmlhttprequest,redirect=1x1.gif
 !#if env_mobile
