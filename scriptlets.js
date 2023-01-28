@@ -1,6 +1,8 @@
+'use strict';
+
+
 /// igdown.js
 (function () {
-    'use strict';
     const disableNewUrlFetchMethod = false;
     const prefetchAndAttachLink = true; 
     const replaceJpegWithJpg = false;
@@ -494,3 +496,77 @@
 (function() {
     document.cookie = "ufti="+encodeURIComponent(JSON.stringify({version: 99999}))
   })();
+
+/// get-url-param.js
+/// alias gup.js
+(function() {
+    if (window.location.href.includes("?url=") || window.location.href.includes("&url=")) {
+        let urlParams = new URLSearchParams(window.location.search);
+        let urlReplacement = urlParams.get("url");
+        if (window.location.href.match("url=http")) {
+            window.location.replace(urlReplacement);
+        } else {
+            window.location.replace(window.location.protocol + "//" + urlReplacement);
+        }
+    }
+})();
+
+/// old-reddit-redirector.js
+/// alias orr.js
+(function() {
+    if (window.location.href.includes("/www.reddit.com/") && !window.location.href.includes("/www.reddit.com/gallery/") && !window.location.href.includes("/www.reddit.com/poll/")) {
+        window.location.replace(window.location.toString().replace("/www.reddit.com/", "/old.reddit.com/"));
+    }
+})();
+
+/// ouo-io-bypasser.js
+/// alias oib.js
+(function() {
+    window.addEventListener("load", function() {
+        if (document.getElementById("form-captcha") === null) {
+            document.getElementsByTagName("form")[0].submit();
+        }
+        if (document.getElementById("form-captcha").click) {
+            document.getElementsByTagName("form")[0].submit();
+        }
+    });
+})();
+
+/// tinyurl-bypasser.js
+/// alias tub.js
+(function() {
+    window.addEventListener("load", function() {
+        let targetLink = $("a:contains('Click Here to Watch')");
+        if (targetLink && targetLink.length) {
+            let newUrl = targetLink[0].href;
+            window.location.replace(newUrl);
+        }
+    });
+})();
+
+/// youtube-shorts-redirector.js
+/// alias ysr.js
+(function() {
+    let oldHref = document.location.href;
+    if (window.location.href.indexOf("youtube.com/shorts") > -1) {
+        window.location.replace(window.location.toString().replace("/shorts/", "/watch?v="));
+    }
+    window.onload = function() {
+        let bodyList = document.querySelector("body");
+        let observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function() {
+                if (oldHref !== document.location.href) {
+                    oldHref = document.location.href;
+                    if (window.location.href.indexOf("youtube.com/shorts") > -1) {
+                        window.location.replace(window.location.toString().replace("/shorts/", "/watch?v="));
+                    }
+                }
+            });
+        });
+        let config = {
+            childList: true,
+            subtree: true
+        };
+        observer.observe(bodyList, config);
+    };
+})();
