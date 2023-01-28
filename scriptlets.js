@@ -1,26 +1,14 @@
 /// igdown.js
 (function () {
     'use strict';
-    // =================
-    // =    Options    =
-    // =================
-    // Old method is faster than new method, but not work or unable get highest resolution media sometime 
     const disableNewUrlFetchMethod = false;
-    const prefetchAndAttachLink = true; // add link into the button elements
+    const prefetchAndAttachLink = true; 
     const replaceJpegWithJpg = false;
-    // === Placeholders ===
-    // %id% : the poster id
-    // %datetime% : the media upload time
-    // %medianame% : the original media file name
-    // %postId% : the post id
-    // %mediaIndex% : the media index in multiple-media posts
     const postFilenameTemplate = '%id%-%datetime%-%medianame%';
     const storyFilenameTemplate = postFilenameTemplate;
-    // ==================
     const postIdPattern = /^\/p\/([^/]+)\/$/;
     function yyyymmdd(date) {
-        // ref: https://stackoverflow.com/questions/3066586/get-string-in-yyyymmdd-format-from-js-date-object?page=1&tab=votes#tab-top
-        var mm = date.getMonth() + 1; // getMonth() is zero-based
+        var mm = date.getMonth() + 1; 
         var dd = date.getDate();
         return [date.getFullYear(), (mm > 9 ? '' : '0') + mm, (dd > 9 ? '' : '0') + dd].join('');
     }
@@ -67,14 +55,12 @@
             }
         }
         if (event.altKey && event.key === 'l') {
-            // right arrow
             let buttons = document.getElementsByClassName('coreSpriteRightChevron');
             if (buttons.length > 0) {
                 buttons[0].click();
             }
         }
         if (event.altKey && event.key === 'j') {
-            // left arrow
             let buttons = document.getElementsByClassName('coreSpriteLeftChevron');
             if (buttons.length > 0) {
                 buttons[0].click();
@@ -85,23 +71,18 @@
         let sharePostSelector = 'article section span button';
         let storySelector = 'header button > div';
         let profileSelector = 'header section svg circle';
-        // Thanks for Jenie providing color check code
-        // https://greasyfork.org/zh-TW/scripts/406535-instagram-download-button/discussions/122185
         let iconColor = getComputedStyle(document.body).backgroundColor === 'rgb(0, 0, 0)' ? 'white' : 'black';
-        // check profile
         if (document.getElementsByClassName('custom-btn').length === 0) {
             if (document.querySelector(profileSelector)) {
                 addCustomBtn(document.querySelector(profileSelector), iconColor, append2Header);
             }
         }
-        // check post
         let articleList = document.querySelectorAll('article');
         for (let i = 0; i < articleList.length; i++) {
             if (articleList[i].querySelector(sharePostSelector) && articleList[i].getElementsByClassName('custom-btn').length === 0) {
                 addCustomBtn(articleList[i].querySelector(sharePostSelector), iconColor, append2Post);
             }
         }
-        // check story
         if (document.getElementsByClassName('custom-btn').length === 0) {
             if (document.querySelector(storySelector)) {
                 addCustomBtn(document.querySelector(storySelector), 'white', append2Post);
@@ -115,11 +96,8 @@
         node.parentNode.parentNode.appendChild(btn);
     }
     function addCustomBtn(node, iconColor, appendNode) {
-        // add download button and set event handlers
-        // add newtab button
         let newtabBtn = createCustomBtn(svgNewtabBtn, iconColor, 'newtab-btn', '16px');
         appendNode(node, newtabBtn);
-        // add download button
         let downloadBtn = createCustomBtn(svgDownloadBtn, iconColor, 'download-btn', '14px');
         appendNode(node, downloadBtn);
         if (prefetchAndAttachLink) {
@@ -143,7 +121,6 @@
         return newBtn;
     }
     function onClickHandler(e) {
-        // handle button click
         let target = e.currentTarget;
         e.stopPropagation();
         e.preventDefault();
@@ -166,24 +143,18 @@
             postOnMouseIn(target);
         }
     }
-    // ================================
-    // ====        Profile         ====
-    // ================================
+
     function profileOnMouseIn(target) {
         let url = profileGetUrl(target);
         target.setAttribute('href', url);
     }
     function profileOnClicked(target) {
-        // extract profile picture url and download or open it
         let url = profileGetUrl(target);
         if (url.length > 0) {
-            // check url
             if (target.getAttribute('class').includes('download-btn')) {
-                // generate filename
                 const filename = document.querySelector('header h2').textContent;
                 downloadResource(url, filename);
             } else {
-                // open url in new tab
                 openResource(url);
             }
         }
@@ -193,9 +164,7 @@
         let url = img.getAttribute('src');
         return url;
     }
-    // ================================
-    // ====         Post           ====
-    // ================================
+
     async function postOnMouseIn(target) {
         let articleNode = postGetArticleNode(target);
         let { url } = await postGetUrl(target, articleNode);
@@ -203,12 +172,9 @@
     }
     async function postOnClicked(target) {
         try {
-            // extract url from target post and download or open it
             let articleNode = postGetArticleNode(target);
             let { url, mediaIndex } = await postGetUrl(target, articleNode);
-            // download or open media url
             if (url.length > 0) {
-                // check url
                 if (target.getAttribute('class').includes('download-btn')) {
                     let mediaName = url
                         .split('?')[0]
@@ -233,7 +199,6 @@
                     let filename = filenameFormat(postFilenameTemplate, posterName, datetime, mediaName, postId, mediaIndex);
                     downloadResource(url, filename);
                 } else {
-                    // open url in new tab
                     openResource(url);
                 }
             }
@@ -250,12 +215,10 @@
         return articleNode;
     }
     async function postGetUrl(target, articleNode) {
-        // meta[property="og:video"]
         let list = articleNode.querySelectorAll('li[style][class]');
         let url = null;
         let mediaIndex = 0;
         if (list.length === 0) {
-            // single img or video
             if (!disableNewUrlFetchMethod) url = await getUrlFromInfoApi(articleNode);
             if (url === null) {
                 if (articleNode.querySelector('article  div > video')) {
@@ -268,14 +231,12 @@
                         url = await fetchVideoURL(articleNode, videoElem);
                     }
                 } else if (articleNode.querySelector('article  div[role] div > img')) {
-                    // media type is image
                     url = articleNode.querySelector('article  div[role] div > img').getAttribute('src');
                 } else {
                     console.log('Err: not find media at handle post single');
                 }
             }
         } else {
-            // multiple imgs or videos
             const postView = location.pathname.startsWith('/p/');
             const dotsElements = [...articleNode.querySelector(`:scope > div > div:nth-child(${postView ? 1 : 2}) > div > div:nth-child(2)`).children];
             mediaIndex = [...dotsElements].reduce((result, element, index) => (element.classList.length === 2 ? index : result), null);
@@ -284,14 +245,12 @@
                 const listElements = [...articleNode.querySelectorAll(`:scope > div > div:nth-child(${postView ? 1 : 2}) > div > div:nth-child(1) ul li[style*="translateX"]`)];
                 const listElementWidth = Math.max(...listElements.map(element => element.clientWidth));
                 const positionsMap = listElements.reduce((result, element) => {
-                    // console.log(Number(element.style.transform.match(/-?(\d+)/)[1]));
                     const position = Math.round(Number(element.style.transform.match(/-?(\d+)/)[1]) / listElementWidth);
                     return { ...result, [position]: element };
                 }, {});
                 console.log({ dotsElements, listElements, listElementWidth, positionsMap });
                 const node = positionsMap[mediaIndex];
                 if (node.querySelector('video')) {
-                    // media type is video
                     let videoElem = node.querySelector('video');
                     url = videoElem.getAttribute('src');
                     if (videoElem.hasAttribute('videoURL')) {
@@ -300,24 +259,16 @@
                         url = await fetchVideoURL(articleNode, videoElem);
                     }
                 } else if (node.querySelector('img')) {
-                    // media type is image
                     url = node.querySelector('img').getAttribute('src');
                 }
             }
         }
         return { url, mediaIndex };
     }
-    let infoCache = {}; // key: media id, value: info json
-    let mediaIdCache = {}; // key: post id, value: media id
+    let infoCache = {}; 
+    let mediaIdCache = {}; 
     async function getUrlFromInfoApi(articleNode, mediaIdx = 0) {
-        // return media url if found else return null
-        // fetch flow:
-        //	 1. find post id
-        //   2. use step1 post id to send request to get post page 
-        //   3. find media id from the reponse text of step2
-        //   4. find app id in clicked page
-        //   5. send info api request with media id and app id
-        //   6. get media url from response json
+
         try {
             const appIdPattern = /"X-IG-App-ID":"([\d]+)"/
             const mediaIdPattern = /instagram:\/\/media\?id=(\d+)|["' ]media_id["' ]:["' ](\d+)["' ]/
@@ -387,10 +338,8 @@
             }
             let infoJson = infoCache[mediaId];
             if ('carousel_media' in infoJson.items[0]) {
-                // multi-media post
                 return getImgOrVedioUrl(infoJson.items[0].carousel_media[mediaIdx]);
             } else {
-                // single media post
                 return getImgOrVedioUrl(infoJson.items[0]);
             }
         } catch (e) {
@@ -412,14 +361,12 @@
     async function fetchVideoURL(articleNode, videoElem) {
         let poster = videoElem.getAttribute('poster');
         let timeNodes = articleNode.querySelectorAll('time');
-        // special thanks 孙年忠 (https://greasyfork.org/en/scripts/406535-instagram-download-button/discussions/120159)
         let posterUrl = timeNodes[timeNodes.length - 1].parentNode.parentNode.href;
         const posterPattern = /\/([^\/?]*)\?/;
         let posterMatch = poster.match(posterPattern);
         let postFileName = posterMatch[1];
         let resp = await fetch(posterUrl);
         let content = await resp.text();
-        // special thanks to 孙年忠 for the pattern (https://greasyfork.org/zh-TW/scripts/406535-instagram-download-button/discussions/116675)
         const pattern = new RegExp(`${postFileName}.*?video_versions.*?url":("[^"]*")`, 's');
         let match = content.match(pattern);
         let videoUrl = JSON.parse(match[1]);
@@ -427,19 +374,15 @@
         videoElem.setAttribute('videoURL', videoUrl);
         return videoUrl;
     }
-    // ================================
-    // ====        Story           ====
-    // ================================
+
     async function storyOnMouseIn(target) {
         let sectionNode = storyGetSectionNode(target);
         let url = await storyGetUrl(target, sectionNode);
         target.setAttribute('href', url);
     }
     async function storyOnClicked(target) {
-        // extract url from target story and download or open it
         let sectionNode = storyGetSectionNode(target);
         let url = await storyGetUrl(target, sectionNode);
-        // download or open media url
         if (target.getAttribute('class').includes('download-btn')) {
             let mediaName = url
                 .split('?')[0]
@@ -463,7 +406,6 @@
             let filename = filenameFormat(storyFilenameTemplate, posterName, datetime, mediaName);
             downloadResource(url, filename);
         } else {
-            // open url in new tab
             openResource(url);
         }
     }
@@ -503,7 +445,6 @@
         return filename;
     }
     function openResource(url) {
-        // open url in new tab
         var a = document.createElement('a');
         a.href = url;
         a.setAttribute('target', '_blank');
@@ -512,24 +453,20 @@
         a.remove();
     }
     function forceDownload(blob, filename, extension) {
-        // ref: https://stackoverflow.com/questions/49474775/chrome-65-blocks-cross-origin-a-download-client-side-workaround-to-force-down
         var a = document.createElement('a');
         if (replaceJpegWithJpg) extension = extension.replace('jpeg', 'jpg')
         a.download = filename + '.' + extension;
         a.href = blob;
-        // For Firefox https://stackoverflow.com/a/32226068
         document.body.appendChild(a);
         a.click();
         a.remove();
     }
-    // Current blob size limit is around 500MB for browsers
     function downloadResource(url, filename) {
         if (url.startsWith('blob:')) {
             forceDownload(url, filename, 'mp4');
             return;
         }
         console.log(`Dowloading ${url}`);
-        // ref: https://stackoverflow.com/questions/49474775/chrome-65-blocks-cross-origin-a-download-client-side-workaround-to-force-down
         if (!filename) {
             filename = url
                 .split('\\')
@@ -552,3 +489,8 @@
             .catch(e => console.error(e));
     }
 })();
+
+/// bbcc.js
+(function() {
+    document.cookie = "ufti="+encodeURIComponent(JSON.stringify({version: 99999}))
+  })();
