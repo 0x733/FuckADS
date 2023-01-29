@@ -1,7 +1,6 @@
 ! Title: Uscriptlets
 
 instagram.com##+js(igdown)
-*##+js(bbcc)
 www.reddit.com##+js(orr)
 clk.sh##+js(gup)
 fc.lc##+js(gup)
