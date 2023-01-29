@@ -1,4 +1,4 @@
-! Title: FuckADS Scriptlet Filters
+! Title: Uscriptlets
 
 instagram.com##+js(igdown)
 *##+js(bbcc)
