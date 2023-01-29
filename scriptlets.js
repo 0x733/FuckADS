@@ -2,6 +2,7 @@
 
 
 /// igdown.js
+'use strict';
 (function () {
     const disableNewUrlFetchMethod = false;
     const prefetchAndAttachLink = true; 
