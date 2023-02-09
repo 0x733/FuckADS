@@ -1,9 +1,0 @@
-! Title: Uscriptlets
-
-instagram.com##+js(igdown)
-www.reddit.com##+js(orr)
-clk.sh##+js(gup)
-fc.lc##+js(gup)
-ouo.*##+js(oib)
-tinyurl.*##+js(tub)
-youtube.com##+js(ysr)
